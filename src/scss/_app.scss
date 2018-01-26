@@ -1,0 +1,24 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.slide-input {
+  width: 25%;
+  margin: $spacing-unit*2 0 $spacing-unit*2 $spacing-unit*2;
+  padding: $spacing-unit*2;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+}
+
+.slide-input-label {
+  font-weight: 300;
+  font-size: 1.2rem;
+}

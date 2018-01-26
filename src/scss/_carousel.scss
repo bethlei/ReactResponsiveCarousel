@@ -1,0 +1,147 @@
+.carousel-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  min-height: 300px;
+  margin: $spacing-unit*3 0;
+}
+
+.carousel {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: relative;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+// Carousel slides
+.carousel-slides {
+  flex: 0 1 auto;
+
+  img {
+    width: 100vw;
+    margin: 0 auto;
+  }
+
+  @include tablet {
+    img {
+      width: 760px;
+    }
+  }
+
+  @include only-tablet {
+    img {
+      width: 760px;
+    }
+  }
+
+  @include desktop {
+    img {
+      width: 800px;
+    }
+  }
+
+  @include only-desktop {
+    img {
+      width: 960px;
+    }
+  }
+
+  @include large {
+    img {
+      width: 1280px;
+    }
+  }
+}
+
+.slide {
+  margin-right: auto;
+  margin-left: auto;
+  display: none;
+  list-style-type: none;
+  text-align: center;
+
+  &-active {
+    display: block;
+  }
+}
+
+// Slide indicators
+.slide-indicators {
+  position: absolute;
+  bottom: $spacing-unit*3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  li + li {
+    margin-left: $spacing-unit;
+  }
+}
+
+.slide-indicator {
+  background: #222;
+  display: inline-block;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &-active {
+    background-color: #efefef;
+  }
+}
+
+// Slide arrows
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  transition: transform .1s ease-in;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    opacity: .5;
+    transition: transform .1s ease-in;
+  }
+
+  &-left {
+    left: $spacing-unit*4;
+
+    .left-arrow {
+      transform: translate(-2px);
+      transform: rotate(180deg);
+      height: 20px;
+    }
+
+  }
+
+  &-right {
+    right: $spacing-unit*4;
+
+    .right-arrow {
+      transform: translate(2px);
+      height: 20px;
+    }
+  }
+}
